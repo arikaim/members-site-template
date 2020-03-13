@@ -1,0 +1,58 @@
+{      
+    "title": "Members Site",
+    "version": "1.2.8",
+    "name": "members-site",
+    "package-type": "template",
+    "icon": "users",
+    "repository": "https://github.com/arikaim/members-site-template.git",
+    "require": {
+        "library": [
+            "jquery",
+            "arikaim",
+            "arikaim-ui",
+            "fomantic",          
+            "tailwind"
+        ],
+        "extensions": [
+            "users"           
+        ]
+    },
+    "routes": [
+        {
+            "path": "/about",           
+            "page": "members-site>about",
+            "name": "About"                   
+        },
+        {
+            "path": "/privacy",           
+            "page": "members-site>privacy",
+            "name": "privacy"                   
+        },
+        {
+            "path": "/content",
+            "language-path": false,
+            "page": "members-site>content",
+            "name": "ProtectedContent",
+            "access": {
+                "auth": "session",
+                "redirect": "/login"
+            }           
+        }
+    ],
+    "include": {     
+        "components": [    
+            "users::users"        
+        ],         
+        "css": [
+            "members.css"
+        ],        
+        "library": [
+            "jquery",           
+            "arikaim",
+            "arikaim-ui",
+            "fomantic",
+            "tailwind"
+        ],
+        "loader": "components:loader.dimmer"
+    }   
+}

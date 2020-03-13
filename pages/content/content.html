@@ -1,0 +1,34 @@
+{% component 'members-site>layout.page' %}
+    {% set active = 'content' %}
+    {{ component('members-site>title',{ title: title }) }}
+
+    {% if access().isLogged() == true %}    
+        <div class="ui padded segment">
+            <p class="mt-2 p-2">
+                Protected content for all loged in users.
+            </p>
+        </div>        
+    {% endif %}
+
+    {% if access().hasAccess('pro-members') == true %}   
+    <div class="ui padded segment">
+        <div class="ui header">
+            Pro Members
+        </div>
+        <p class="mt-2 p-2">
+            Protected content for <b>Pro Members</b> permission.
+        </p>
+    </div>   
+    {% endif %}
+
+    {% if access().hasAccess('premium-members') == true %}   
+    <div class="ui padded segment">
+        <div class="ui header">
+            Premium Members
+        </div>
+        <p class="mt-2 p-2">
+            Protected content for <b>Premium Members</b> permission.
+        </p>
+    </div>   
+    {% endif %}
+{% endcomponent %}

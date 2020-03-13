@@ -1,0 +1,10 @@
+{     
+    "title"  : "Members site",
+    "labels": {
+        "home": "Home",
+        "about": "About",
+        "content": "Content Page",
+        "login": "Login",
+        "signup": "Sign Up"
+    }
+}

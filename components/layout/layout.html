@@ -1,0 +1,9 @@
+<div class="page-content">
+    <div class="content-inside">   
+        <div class="ui stackable grid">                 
+            {{ component('members-site>navbar',{ language: current_language, active: active }) }}
+            {{ content }} 
+        </div>        
+    </div>   
+</div>
+{{ component('members-site>footer',{ link_class: 'text-gray-300 footer-link' }) }}   

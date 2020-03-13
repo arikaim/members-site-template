@@ -1,0 +1,46 @@
+<div class="row bg-indigo-900 shadow-lg column mt-1">   
+    <div class="three wide computer only column"></div>
+    <div class="three wide computer five wide tablet four wide mobile column"> 
+        <div class="ui inverted secondary large menu navbar-menu ">                          
+            <div class="item navbar-item ">                    
+                <span class="navbar-title mt-1">
+                    {{ title }}      
+                </span>          
+            </div>             
+        </div>
+    </div>
+    <div class="five wide computer only column">                        
+        <div class="ui inverted secondary large menu navbar-menu">      
+            <div class="item">                                                                         
+                <div class="item navbar-item {{ (active == 'home') ? 'active': '' }}">
+                    <a href="{{ url('') }}">{{ labels.home }}</a>
+                </div>  
+                <div class="item navbar-item {{ (active == 'content') ? 'active': '' }}">
+                    <a href="{{ url('/content') }}">{{ labels.content }}</a>
+                </div>
+                <div class="item navbar-item {{ (active == 'about') ? 'active': '' }}">
+                    <a href="{{ url('/about') }}">{{ labels.about }}</a>
+                </div>      
+            </div>           
+        </div>  
+    </div>
+    <div class="two wide computer six wide mobile eleven wide tablet right aligned column">
+        <div class="ui inverted secondary large menu navbar-menu">        
+            <div class="right aligned item">     
+                {% if service('access').isLogged() == true %} 
+                <div class="item">              
+                    {{ component('users>users.dropdown',{ icon: 'user olive', show_user_name: true }) }}
+                </div>
+                {% else %}
+                <div class="item navbar-item {{ (active == 'login') ? 'active': '' }}">   
+                    <a href="{{ url('/login') }}">{{ labels.login }}</a>            
+                </div>
+                <div class="item navbar-item {{ (active == 'signup') ? 'active': '' }}">   
+                    <a href="{{ url('/signup') }}">{{ labels.signup }}</a>            
+                </div>
+                {% endif %}
+            </div>       
+        </div>                                                                                                                                
+    </div>    
+    <div class="three wide computer only column"></div>          
+</div>

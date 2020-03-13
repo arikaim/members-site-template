@@ -1,0 +1,19 @@
+{
+    "labels": {
+        "open": "Open Source",
+        "code": "Code quality",
+        "permission": "Permissions",
+        "users": "Users"
+    },
+    "text": {
+        "open": "All source code included.",
+        "code": "Clean, high quality php, html and JavaScript code",
+        "permission": "Manage user and group permissions.",
+        "users": "Users managment"
+    },
+    "head": {
+        "title": "Members site",
+        "description": "Members site",
+        "keywords": "site, members"
+    }
+}
