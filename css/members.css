@@ -125,3 +125,10 @@ body {
 .page-link {
     background-color: none!important;
 }
+.user-menu {
+    background-color: #3c366b!important;
+}
+.ui.vertical.menu .item > i.icon.left {
+    float: none;
+    margin: 0em 0.35714286em 0em 0em;
+}

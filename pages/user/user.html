@@ -1,15 +1,10 @@
-{% component 'members-site>layout.page' %}
-    <div class="ui container mt-20">
-        <div class="ui very basic segment">
-            <div class="ui left close rail">
-                <div class="ui very basic segment">
-                    <div class="ui block header mt-4">
-                        <i class="icon user"></i>
-                        <h4 class="content">{{ title }}</h4>
-                    </div>
-                    {{ component('users>users.menu',{ class: 'fluid', selected: menu }) }}        
-                </div>
-            </div>
+{% component 'members-site>layout.page' %}     
+    {% set user = access().getUser() %}
+    <div class="ui grid">
+        <div class="three wide computer column only">
+            {{ component('users>users.menu.panel',{ user: user, class: 'fluid', selected: menu }) }}
+        </div>
+        <div class="ten wide column mt-4">       
             <div id="user_area_content" class="min-h-full">
                 {% if menu == 'change-password' %}
                     {{ component('users>users.password') }}
@@ -20,5 +15,5 @@
                 {% endif %}        
             </div>
         </div>
-    </div>
+    </div>   
 {% endcomponent %}

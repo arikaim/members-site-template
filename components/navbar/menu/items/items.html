@@ -1,0 +1,9 @@
+<div class="item navbar-item {{ (active == 'home') ? 'active': '' }}">
+    <a href="{{ url('') }}">{{ labels.home }}</a>
+</div>  
+<div class="item navbar-item {{ (active == 'content') ? 'active': '' }}">
+    <a href="{{ url('/content') }}">{{ labels.content }}</a>
+</div>
+<div class="item navbar-item {{ (active == 'about') ? 'active': '' }}">
+    <a href="{{ url('/about') }}">{{ labels.about }}</a>
+</div>      

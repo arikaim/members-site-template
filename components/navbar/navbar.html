@@ -1,8 +1,16 @@
 <div class="row bg-indigo-900 shadow-lg column mt-1">   
     <div class="three wide computer only column"></div>
-    <div class="three wide computer five wide tablet four wide mobile column"> 
-        <div class="ui inverted secondary large menu navbar-menu ">                          
-            <div class="item navbar-item ">                    
+    <div class="one wide mobile only tablet only column">
+        <div class="ui icon inverted dropdown mobile-menu mt-5">
+            <i class="icon big bars pl-4 inverted white open-sidebar"></i>
+            <div class="ui menu">            
+                {{ component('members-site>navbar.menu.items',{ active: active }) }}   
+            </div>
+        </div>   
+    </div>
+    <div class="five wide column"> 
+        <div class="ui inverted secondary large menu navbar-menu pl-2">                          
+            <div class="item navbar-item">                    
                 <span class="navbar-title mt-1">
                     {{ title }}      
                 </span>          
@@ -10,37 +18,16 @@
         </div>
     </div>
     <div class="five wide computer only column">                        
-        <div class="ui inverted secondary large menu navbar-menu">      
-            <div class="item">                                                                         
-                <div class="item navbar-item {{ (active == 'home') ? 'active': '' }}">
-                    <a href="{{ url('') }}">{{ labels.home }}</a>
-                </div>  
-                <div class="item navbar-item {{ (active == 'content') ? 'active': '' }}">
-                    <a href="{{ url('/content') }}">{{ labels.content }}</a>
-                </div>
-                <div class="item navbar-item {{ (active == 'about') ? 'active': '' }}">
-                    <a href="{{ url('/about') }}">{{ labels.about }}</a>
-                </div>      
-            </div>           
-        </div>  
+        {{ component('members-site>navbar.menu') }}
     </div>
-    <div class="two wide computer six wide mobile eleven wide tablet right aligned column">
-        <div class="ui inverted secondary large menu navbar-menu">        
-            <div class="right aligned item">     
-                {% if service('access').isLogged() == true %} 
-                <div class="item">              
-                    {{ component('users>users.dropdown',{ icon: 'user olive', show_user_name: true }) }}
-                </div>
-                {% else %}
-                <div class="item navbar-item {{ (active == 'login') ? 'active': '' }}">   
-                    <a href="{{ url('/login') }}">{{ labels.login }}</a>            
-                </div>
-                <div class="item navbar-item {{ (active == 'signup') ? 'active': '' }}">   
-                    <a href="{{ url('/signup') }}">{{ labels.signup }}</a>            
-                </div>
-                {% endif %}
-            </div>       
-        </div>                                                                                                                                
+    <div class="two wide computer only three wide tablet only right aligned column">         
+        {{  component('users>users.menu.login',{
+                class: 'inverted secondary large navbar-menu',
+                show_user_name: true,
+                user_icon: 'user olive',
+                active: active
+            }) 
+        }}                                                                                                                                     
     </div>    
     <div class="three wide computer only column"></div>          
 </div>
