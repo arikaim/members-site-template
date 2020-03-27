@@ -1,11 +1,11 @@
 {      
     "title": "Members Site",
-    "version": "1.1.0",
-    "name": "members-site",
+    "version": "1.1.1",
+    "name": "members",
     "package-type": "template",
     "icon": "users",
-    "thumbnail": "members-site-thumbnail.jpg",
-    "repository": "https://github.com/arikaim/members-site-template.git",
+    "thumbnail": "members-thumbnail.jpg",
+    "repository": "https://github.com/arikaim/members-template.git",
     "require": {
         "library": [
             "jquery",
@@ -21,23 +21,23 @@
     "routes": [
         {
             "path": "/",           
-            "page": "members-site>home",
+            "page": "members>home",
             "name": "Home"                   
         },
         {
             "path": "/about",           
-            "page": "members-site>about",
+            "page": "members>about",
             "name": "About"                   
         },
         {
             "path": "/privacy",           
-            "page": "members-site>privacy",
+            "page": "members>privacy",
             "name": "privacy"                   
         },
         {
             "path": "/content",
             "language-path": false,
-            "page": "members-site>content",
+            "page": "members>content",
             "name": "ProtectedContent",
             "access": {
                 "auth": "session",

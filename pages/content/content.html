@@ -1,6 +1,6 @@
-{% component 'members-site>layout.page' %}
+{% component 'members>layout.page' %}
     {% set active = 'content' %}
-    {{ component('members-site>title',{ title: title }) }}
+    {{ component('members>title',{ title: title }) }}
 
     {% if access().isLogged() == true %}    
         <div class="ui padded segment">
